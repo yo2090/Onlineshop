@@ -1,3 +1,3 @@
-## My First project
+## My First Project
 
 Some description!
