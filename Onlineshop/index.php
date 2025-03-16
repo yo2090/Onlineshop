@@ -21,14 +21,19 @@ $products = $productcontroller->index();
             <h5 class="card-title"><?php echo $product['name']; ?></h5>
             <p class="card-text text-truncate" style="max-height: 60px; overflow: hidden;"><?php echo $product['description']; ?></p>
             <h6><?php echo 'Price: ' . '€' . $product['price']; ?></h6>
-            <h6><?php echo 'Quantity: ' . $product['stock'] . ' pieces'; ?></h6>
+            <h6><?php echo htmlspecialchars($product['stock']) > 0 ? '<span style="color: green ">In stock</span>' : '<span style="color: red ">Out of stock</span>'; ?></h6>
           </div>
           <div class="card-body flex d-flex">
-          <a href="show_product.php?id=<?php echo $product['id']; ?>" class="btn btn-warning mx-1">View</a>
-          <!-- <div class="card-body"> -->
+            <select name="" id="">
+              <?php for ($i = 1; $i <= 30; $i++): ?>
+                <option value=""><?php echo $i; ?></option>
+              <?php endfor; ?>
+            </select>
+            <a href="show_product.php?id=<?php echo $product['id']; ?>" class="btn btn-warning mx-1">View</a>
+            <!-- <div class="card-body"> -->
             <button type="submit" class="btn btn-success " name="cart">Add to cart</button>
-          <!-- </div> -->
-          </div> 
+            <!-- </div> -->
+          </div>
         </div>
       </div>
     <?php endforeach; ?>

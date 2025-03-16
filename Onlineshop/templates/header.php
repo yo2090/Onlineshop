@@ -24,14 +24,14 @@ if (isset($_POST['logout'])) {
   <nav class="px-5 navbar navbar-expand-lg navbar-dark bg-primary ">
     <div class="container-fluid">
       <div class="container d-flex">
-        <a class="navbar-brand" href="http://onlineshop.local">CRUD shop</a>
+        <a class="navbar-brand" href="index.php">CRUD shop</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" href="http://onlineshop.local">Home</a>
+              <a class="nav-link active" href="index.php">Home</a>
             </li>
 
             <li class="nav-item px-3">
@@ -55,8 +55,8 @@ if (isset($_POST['logout'])) {
         </div>
         <div class="d-flex">
           <?php if (Middleware::isGuest()): ?>
-            <a class="active btn btn-warning mx-1" href="http://onlineshop.local/login.php">Login</a>
-            <a class="active btn btn-warning mx-1" href="http://onlineshop.local/register.php">Register</a>
+            <a class="active btn btn-warning mx-1" href="login.php">Login</a>
+            <a class="active btn btn-warning mx-1" href="register.php">Register</a>
           <?php endif; ?>
 
           <?php if (Middleware::isUser()):?>
